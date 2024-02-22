@@ -177,6 +177,10 @@ services:
     class: Drupal\civiremote_funding\Controller\ApplicationHistoryController
     public: true
 
+  Drupal\civiremote_funding\Controller\ApplicationTemplateRenderController:
+    class: Drupal\civiremote_funding\Controller\ApplicationTemplateRenderController
+    public: true
+
   Drupal\civiremote_funding\Controller\TransferContractDownloadController:
     class: Drupal\civiremote_funding\Controller\TransferContractDownloadController
     public: true

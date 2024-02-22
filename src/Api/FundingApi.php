@@ -22,6 +22,7 @@ namespace Drupal\civiremote_funding\Api;
 
 use Drupal\civiremote_funding\Access\RemoteContactIdProviderInterface;
 use Drupal\civiremote_funding\Api\DTO\ApplicationProcessActivity;
+use Drupal\civiremote_funding\Api\DTO\ApplicationProcessTemplate;
 use Drupal\civiremote_funding\Api\DTO\FundingCase;
 use Drupal\civiremote_funding\Api\DTO\FundingCaseInfo;
 use Drupal\civiremote_funding\Api\DTO\FundingCaseType;
@@ -181,6 +182,31 @@ class FundingApi {
     ]);
 
     return ApplicationProcessActivity::allFromArrays($result['values']);
+  }
+
+  public function getApplicationTemplateRenderUri(int $applicationProcessId, int $templateId): string {
+    $result = $this->apiClient->executeV4('RemoteFundingApplicationProcess', 'getTemplateRenderUri', [
+      'remoteContactId' => $this->remoteContactIdProvider->getRemoteContactId(),
+      'applicationProcessId' => $applicationProcessId,
+      'templateId' => $templateId,
+    ]);
+
+    // @phpstan-ignore-next-line
+    return $result['values']['renderUri'];
+  }
+
+  /**
+   * @phpstan-return list<ApplicationProcessTemplate>
+   *
+   * @throws \Drupal\civiremote_funding\Api\Exception\ApiCallFailedException
+   */
+  public function getApplicationTemplates(int $applicationProcessId): array {
+    $result = $this->apiClient->executeV4('RemoteFundingApplicationProcess', 'getTemplates', [
+      'remoteContactId' => $this->remoteContactIdProvider->getRemoteContactId(),
+      'applicationProcessId' => $applicationProcessId,
+    ]);
+
+    return ApplicationProcessTemplate::allFromArrays($result['values']);
   }
 
   /**

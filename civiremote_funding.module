@@ -18,15 +18,31 @@
 
 declare(strict_types=1);
 
+use Drupal\civiremote_funding\Api\FundingApi;
 use Drupal\civiremote_funding\Breadcrumb\BreadcrumbRouteAnalyzer;
 use Drupal\civiremote_funding\File\FundingFileDownloadHook;
 use Drupal\civiremote_funding\File\FundingFileManager;
 use Drupal\civiremote_funding\Install\DashboardBlockInstaller;
+use Drupal\civiremote_funding\Views\ApplicationProcessDropButton;
 use Drupal\civiremote_funding\ViewTranslator;
 use Drupal\Core\Breadcrumb\Breadcrumb;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\file\FileInterface;
+use Drupal\views\Plugin\views\field\Dropbutton;
+use Drupal\views\ViewExecutable;
+
+function civiremote_funding_views_pre_build(ViewExecutable $view): void {
+  if (!in_array($view->id(), ['civiremote_funding_application_list', 'civiremote_funding_combined_application_process_list'], TRUE)) {
+    return;
+  }
+
+  if (($view->field['dropbutton'] ?? NULL) instanceof Dropbutton) {
+    /** @var \Drupal\civiremote_funding\Api\FundingApi $fundingApi */
+    $fundingApi = \Drupal::service(FundingApi::class);
+    $view->field['dropbutton'] = new ApplicationProcessDropButton($fundingApi, $view->field['dropbutton']);
+  }
+}
 
 /**
  * Implements hook_rebuild().

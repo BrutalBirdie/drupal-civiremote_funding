@@ -34,7 +34,9 @@ use Psr\Http\Message\ResponseInterface;
  */
 class RemotePageClient {
 
-  private const DEFAULT_TIMEOUT = 3.0;
+  private const DEFAULT_CONNECT_TIMEOUT = 3.0;
+
+  private const DEFAULT_TIMEOUT = 7.0;
 
   private string $apiKey;
 
@@ -83,6 +85,7 @@ class RemotePageClient {
   public function request(string $method, string $uri, array $options = []): ResponseInterface {
     // @phpstan-ignore-next-line
     $options['headers'] = array_merge($options['headers'] ?? [], $this->buildHeaders());
+    $options['connect_timeout'] ??= self::DEFAULT_CONNECT_TIMEOUT;
     $options['timeout'] ??= self::DEFAULT_TIMEOUT;
     $options['http_errors'] ??= FALSE;
 

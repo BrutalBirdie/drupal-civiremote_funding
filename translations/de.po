@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: civiremote_funding\n"
-"POT-Creation-Date: 2023-10-19 16:21+0200\n"
+"POT-Creation-Date: 2024-02-22 16:04+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -79,7 +79,7 @@ msgid "Download"
 msgstr "Herunterladen"
 
 #: config/optional/views.view.civiremote_funding_application_list.yml
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:40
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:42
 msgid "Funding Applications"
 msgstr "Förderanträge"
 
@@ -204,7 +204,7 @@ msgid "CiviCRM funding transfer contract via remote API"
 msgstr ""
 
 #: config/optional/views.view.civiremote_funding_drawdown_list.yml
-#: src/Form/NewDrawdownForm.php:95
+#: src/Form/NewDrawdownForm.php:96
 msgid "Amount"
 msgstr "Betrag"
 
@@ -230,7 +230,7 @@ msgid "List of CiviCRM funding applications (non-combined)  via remote API"
 msgstr "Liste der CiviCRM Förderanträge (keine Sammelanträge) via Remote API"
 
 #: config/optional/views.view.civiremote_funding_transfer_contract.yml
-#: src/Form/NewDrawdownForm.php:90
+#: src/Form/NewDrawdownForm.php:91
 msgid "Transfer Contract"
 msgstr "Weiterleitungsvertrag"
 
@@ -299,7 +299,7 @@ msgid "Creation Date"
 msgstr "Erstellungsdatum"
 
 #: config/optional/views.view.civiremote_funding_transfer_contract_list.yml
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApprovements.php:45
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApprovements.php:47
 msgid "Transfer Contracts"
 msgstr "Weiterleitungsverträge"
 
@@ -391,11 +391,11 @@ msgstr ""
 msgid "Loading form failed: @error"
 msgstr "Laden des Formulars fehlgeschlagen: @error"
 
-#: src/Form/AbstractFundingJsonFormsForm.php:100
+#: src/Form/AbstractFundingJsonFormsForm.php:105
 msgid "Error validating form: @error"
 msgstr "Fehler bei der Formularvalidierung: @error"
 
-#: src/Form/AbstractFundingJsonFormsForm.php:124
+#: src/Form/AbstractFundingJsonFormsForm.php:129
 msgid "Submitting form failed: @error"
 msgstr "Senden des Formulars fehlgeschlagen: @error"
 
@@ -419,19 +419,19 @@ msgstr "Kein Förderfalltyp im gewählten Förderprogramm verfügbar."
 msgid "API request failed: @error"
 msgstr "API-Anfrage fehlgeschlagen: @error"
 
-#: src/Form/NewDrawdownForm.php:87
+#: src/Form/NewDrawdownForm.php:88
 msgid "Create Drawdown"
 msgstr "Mittelabruf erstellen"
 
-#: src/Form/NewDrawdownForm.php:104
+#: src/Form/NewDrawdownForm.php:105
 msgid "Submit"
 msgstr "Absenden"
 
-#: src/Form/NewDrawdownForm.php:117
+#: src/Form/NewDrawdownForm.php:118
 msgid "Drawdown created."
 msgstr "Mittelabruf erstellt."
 
-#: src/Form/NewDrawdownForm.php:124
+#: src/Form/NewDrawdownForm.php:125
 msgid "Failed to create drawdown: @error"
 msgstr "Erstellung des Mittelabrufs fehlgeschlagen: @error"
 
@@ -439,34 +439,38 @@ msgstr "Erstellung des Mittelabrufs fehlgeschlagen: @error"
 msgid "Validation failed."
 msgstr "Validierung fehlgeschlagen."
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:45
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:47
 msgid "My Applications"
 msgstr "Meine Förderanträge"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:48
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:50
 msgid "Manage current funding processes"
 msgstr "Laufende Antragsverfahren verwalten"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:53
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:55
 msgid "My Combined Applications"
 msgstr "Meine Sammelanträge"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:56
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:58
 msgid "Manage current combined applications"
 msgstr "Laufende Sammelanträge verwalten"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:61
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:63
 msgid "New Application"
 msgstr "Neuer Antrag"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:64
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApplications.php:66
 msgid "Place a new application"
 msgstr "Neuen Antrag stellen"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApprovements.php:40
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApprovements.php:42
 msgid "Approvements"
 msgstr "Bewilligungen"
 
-#: src/Plugin/Block/CiviremoteFundingDashboardGroupApprovements.php:48
+#: src/Plugin/Block/CiviremoteFundingDashboardGroupApprovements.php:50
 msgid "Download transfer contracts and manage drawdowns"
 msgstr "Weiterleitungsverträge herunterladen und Mittelabrufe verwalten"
+
+#: src/Views/ApplicationProcessDropButton.php:89
+msgid "Create: @label"
+msgstr "Erstellen: @label"

@@ -56,6 +56,20 @@ civiremote_funding.application_history:
   requirements:
     _permission: 'civiremote_funding: access'
 
+civiremote_funding.application_template_render:
+  path: '/civiremote/funding/application/{applicationProcessId}/template/{templateId}/render'
+  defaults:
+    _controller: 'Drupal\civiremote_funding\Controller\ApplicationTemplateRenderController:render'
+  options:
+    no_cache: TRUE
+    parameters:
+      applicationProcessId:
+        type: int
+      templateId:
+        type: int
+  requirements:
+    _permission: 'civiremote_funding: access'
+
 civiremote_funding.case:
   path: '/civiremote/funding/case/{fundingCaseId}'
   defaults:
