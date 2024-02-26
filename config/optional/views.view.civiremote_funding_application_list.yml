@@ -624,7 +624,7 @@ display:
           field: dropbutton
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'Actions dropbutton (Addtional actions might be appended dynamically)'
           plugin_id: dropbutton
           label: Actions
           exclude: false
